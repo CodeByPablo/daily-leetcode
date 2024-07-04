@@ -31,6 +31,5 @@ class Solution:
             seen.add(nums[i])
         return False
 
-
 solution = Solution()
 print(solution.containsDuplicate([1,3,5,2,4,5,6,3,3,4,7]))

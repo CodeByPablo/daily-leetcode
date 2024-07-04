@@ -1,3 +1,5 @@
+from typing import Counter
+
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         # Initial personal solution
@@ -29,26 +31,26 @@ class Solution:
         #     return True
         # return False
 
-        # HashMap solution 2
-        if len(s) == len(t):
-            s_chars = {}
-            t_chars = {}
-            length = len(s)
+        # HashMap solution 2 - Time: O(s+t) - Space: O(s+t)
+        # if len(s) != len(t):
+        #     return False
+        
+        # s_chars, t_chars = {}, {}
+        # length = len(s)
 
-            for i in range(length):
-                if s[i] not in s_chars:
-                    s_chars[s[i]] = 1
-                else:
-                    s_chars[s[i]] += 1
-            for i in range(length):
-                if t[i] not in t_chars:
-                    t_chars[t[i]] = 1
-                else:
-                    t_chars[t[i]] += 1
-            
-            if s_chars == t_chars:
-                return True
-        return False
+        # for i in range(length):
+        #     s_chars[s[i]] = 1 + s_chars.get(s[i], 0)
+        #     t_chars[t[i]] = 1 + t_chars.get(t[i], 0)
+        # for c in s_chars:
+        #     if s_chars[c] != t_chars.get(c, 0):
+        #         return False
+        # return True
+
+        # HashMap solution short
+        return Counter(s) == Counter(t)
+
+        # Sorting solution solution
+        # return sorted(s) == sorted(t)
 
 
 

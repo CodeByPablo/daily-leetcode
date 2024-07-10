@@ -18,7 +18,7 @@ class Solution:
         #     seen.pop(max_key)
         # return top_frequent
 
-        # bucket sort
+        # bucket sort - Time: O(n)
         count = {}
         freq = [[] for i in range(len(nums) + 1)]
 

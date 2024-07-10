@@ -3,15 +3,24 @@ from typing import List
 class Solution:
     
     def encode(self, strs: List[str]) -> str:
-        encode_msg = ""
-        for i, w in enumerate(strs):
-            encode_msg = encode_msg + w
-            if i < len(strs) - 1:
-                encode_msg += ":;"
-        return self.decode(encode_msg)
+        res = ""
+        for s in strs:
+            res += str(len(s)) + "#" + s
+        return res
     
     def decode(self, strs: str) -> List[str]:
-        return strs.split(":;")
+        res, i = [], 0
+
+        while i < len(strs):
+            j = i
+            while strs[j] != '#':
+                j += 1
+            length = int(strs[i:j])
+            res.append(strs[j + 1: j + 1 + length])
+            i = j + 1 + length
+        return res
+
 
 solution = Solution()
-print(solution.encode(["Bibi","es","puta"]))
+print(solution.decode(solution.encode(["Bibi","es","asdasdasd"])))
+

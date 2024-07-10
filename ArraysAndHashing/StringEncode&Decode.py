@@ -4,12 +4,14 @@ class Solution:
     
     def encode(self, strs: List[str]) -> str:
         encode_msg = ""
-        for w in strs:
-            encode_msg = encode_msg + w + " "
+        for i, w in enumerate(strs):
+            encode_msg = encode_msg + w
+            if i < len(strs) - 1:
+                encode_msg += ":;"
         return self.decode(encode_msg)
     
     def decode(self, strs: str) -> List[str]:
-        return strs.split(" ")
+        return strs.split(":;")
 
 solution = Solution()
 print(solution.encode(["Bibi","es","puta"]))

@@ -15,8 +15,3 @@ class Solution:
 
 solution = Solution()
 print(solution.productExceptSelf([4,7,2,9,2]))
-
-
-
-nums = [4,7,2,9,2]
-print(range(len(nums) - 1, 0, -1))

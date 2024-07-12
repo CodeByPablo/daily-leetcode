@@ -23,6 +23,43 @@ class Solution:
                 #continue
         return True
 
+        # # Step by step solution
+        # # check for values in row
+        # for row in range(9):
+        #     seen = set()
+        #     for column in range(9):
+        #         item = board[row][column]
+        #         if item in seen:
+        #             return False
+        #         elif item != ".":
+        #             seen.add(item)
+        # # check for values in column
+        # for row in range(9):
+        #     seen = set()
+        #     for column in range(9):
+        #         item = board[column][row]
+        #         if item in seen:
+        #             return False
+        #         elif item != ".":
+        #             seen.add(item)
+        # # check for values in boxes
+        # starts = [(0, 0), (0, 3), (0, 6),
+        #           (3, 0), (3, 3), (3, 6),
+        #           (6, 0), (3, 3), (6, 6)]
+        
+        # for i, j in starts:
+        #     seen = set()
+        #     for row in range(i, i+3):
+        #         for col in range(j, j+3):
+        #             item = board[row][col]
+        #             if item in seen:
+        #                 return False
+        #             elif item != ".":
+        #                 seen.add(item)
+        # return True
+
+
+
 board = [
     ["5","3",".",".","7",".",".",".","."],
     ["6",".",".","1","9","5",".",".","."],
